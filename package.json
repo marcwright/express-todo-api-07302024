@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node build/index.js",
+    "start-dev": "nodemon src/index.ts",
+    "dev": "npm run build && concurrently -k \"tsc -w\" \"nodemon build/index.js\"",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
